@@ -1,28 +1,27 @@
 # <LINUX基本命令>
-```ruby
 clear 清空
 
 ls -a/-l: 查看当前目录结构 (-a看所有包括隐藏)
 
-cd xxx[路径地址]：进入到指定的文件夹中
-cd / : 根目录
-cd ./ : 当前目录
-cd ../ : 上级目录
+`cd xxx[路径地址]`：进入到指定的文件夹中
+`cd / `: 根目录
+`cd ./` : 当前目录
+`cd ../ `: 上级目录
 
-mkdir : 创建文件夹
-touch : 创建空文件
+`mkdir `: 创建文件夹
+`touch `: 创建空文件
 
-vi xxx : 向文件中插入或者管理内容
+`vi xxx` : 向文件中插入或者管理内容
     i > 进入到插入模式
     ESC + :wq 保存内容，退出
 
-echo : 'hello world' > xxx.txt 向指定的文件中输入hello world，如果没有文件就会自动创建
+`echo : 'hello world' > xxx.txt` 向指定的文件中输入hello world，如果没有文件就会自动创建
 
-cat : 查看内容
+`cat `: 查看内容
 
-cp : 拷贝
+`cp `: 拷贝
 
-rm : 删除
+`rm `: 删除
     -r 递归删除    -f 强制删除(无法还原)
 
 # <git的常规流程>
@@ -40,30 +39,30 @@ staged或cached 暂存区
 3)历史区:
     存放所有历史版本的地方(提交的版本)
 
-$ git init 创建git仓库
+`$ git init `创建git仓库
 
-$ git add -A 全部提交到暂存区
+`$ git add -A `全部提交到暂存区
 
-$ git commit xxx -m'[备注]'  把暂存区中的xxx文件提交到历史区，生成一个历史版本
+`$ git commit xxx -m'[备注]'  `把暂存区中的xxx文件提交到历史区，生成一个历史版本
 
-$ git status 查看当前修改的文件处于哪一个区域 
+`$ git status `查看当前修改的文件处于哪一个区域 
 红色：工作区
 绿色：暂存区
 看不见：已经提交(历史区)
 
-$ git rm --cached xxx -f 删除暂存区的某个文件<xxx>
+`$ git rm --cached xxx -f` 删除暂存区的某个文件<xxx>
 
-$ git checkout xxx 从暂存区撤回到工作区，并且不会删除暂存区的文件
+`$ git checkout xxx `从暂存区撤回到工作区，并且不会删除暂存区的文件
 
-$git diff  工作区与暂存区对比
-$git diff master 工作区与历史区对比
+`$git diff  `工作区与暂存区对比
+`$git diff master `工作区与历史区对比
 
 
 代码回滚：
 
-$ git checkout xxx 从暂存区撤回到工作区，并且不会删除暂存区的文件
+`$ git checkout xxx` 从暂存区撤回到工作区，并且不会删除暂存区的文件
 
-$ git reset HEAD --xxx 拉取最近一次提交到版本库的文件到暂存区  改操作不影响工作区   为了checkout回工作区
+`$ git reset HEAD --xxx` 拉取最近一次提交到版本库的文件到暂存区  改操作不影响工作区   为了checkout回工作区
 
 ###### <常用>
 `$ git reset --hard 版本号`    把暂存区和工作区的内容全部都变为该版本（版本号前几位就可以）
@@ -97,27 +96,27 @@ $ git reset HEAD --xxx 拉取最近一次提交到版本库的文件到暂存区
     $ git clone '远程仓库git地址' '本地仓库名字(不写就默认是仓库名)'
 
 4) 各个开发者推送自己的代码
-    推送：$ git push origin master (每一次push之前最好都要pull一下，有冲突在本地处理，然后再push)
-    拉取：$ git pull origin master
+    推送：`$ git push origin master` (每一次push之前最好都要pull一下，有冲突在本地处理，然后再push)
+    拉取：`$ git pull origin master`
 ***
 ***
 ***
 ***
 #### ssh连接github<新电脑需要先配钥匙>  //智能 HTTP 协议或许已经是最流行的使用 Git 的方式了，ssh目前已不常用
 （钥匙的作用是把你电脑上面的git和github连接）
-ssh-keygen -t rsa -C "your_email@youremail.com"
+`ssh-keygen -t rsa -C "your_email@youremail.com"`
 配钥匙的过程中不管你看到什么一路enter就好。然后你会在C:\Users\Administrator\.ssh目录下面看到三个东西，其中一个是.pub格式的，用记事本打开它，复制。然后来到你的github，在setting里面找到ssh keys把你刚才复制的钥匙给粘贴了，title随便写一个。
 
 2.建仓库
-$ git init
+`$ git init`
 打完这个命令行敲回车，你会发现你的这个文件夹下面多了一个.git文件夹，没有的在查看里面把隐藏的文件给显示出来就好了。
 
 3.设置用户名和邮箱。
-1 $ git config --global user.name "your name"
-2 $ git config --global user.email "your_email@youremail.com"
+1. `$ git config --global user.name "your name"`
+2. `$ git config --global user.email "your_email@youremail.com"`
 
 4.添加远程地址
-$ git remote add origin git@github.com/你的github用户名/仓库名.git
+`$ git remote add origin git@github.com/你的github用户名/仓库名.git`
 #### <本项目上传方式>
 #### <$ git remote add origin git@github.com:mbw3641193/Git-Study-Options.git 通过SSH链接本地仓库与github远程仓库>
 #### <$ git push -u origin master 上传到github远程仓库>
