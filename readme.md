@@ -77,11 +77,33 @@ $ git push origin master  把本地历史区中的信息推送到中央服务器
 
 $ git pull origin master  把中央服务器上的信息拉取到本地  (存在代码冲突)
 
+#### 1、基础流程操作
+1) 首先创建中央仓库：可以基于github来创建
+
+    把开发者列入仓库的开发群组中（使用统一账号也可以，但是每个人都来在本地的git全局配置中，设置自己的用户名和邮箱）
+
+2) 在setting > collaborators 中添加成员，成员确认邮件进入项目
+
+3) 远程仓库与本地仓库保持关联
+
+    连接方式1：(http方式)
+    git remote add origin '远程仓库git地址'  > 远程仓库与本地仓库保持连接 origin是连接的名称
+    git remote -v                           > 查看连接信息
+    git remote rm origin                    > 断开连接
+    git remote update origin                > 更新连接通道
+
+
+    连接方式2：把远程拉取到本地 (自动创建连接，最常用方式) 
+    $ git clone '远程仓库git地址' '本地仓库名字(不写就默认是仓库名)'
+
+4) 各个开发者推送自己的代码
+    推送：$ git push origin master (每一次push之前最好都要pull一下，有冲突在本地处理，然后再push)
+    拉取：$ git pull origin master
 ***
 ***
 ***
 ***
-#### <新电脑需要先配钥匙>
+#### ssh连接github<新电脑需要先配钥匙>  //智能 HTTP 协议或许已经是最流行的使用 Git 的方式了，ssh目前已不常用
 （钥匙的作用是把你电脑上面的git和github连接）
 ssh-keygen -t rsa -C "your_email@youremail.com"
 配钥匙的过程中不管你看到什么一路enter就好。然后你会在C:\Users\Administrator\.ssh目录下面看到三个东西，其中一个是.pub格式的，用记事本打开它，复制。然后来到你的github，在setting里面找到ssh keys把你刚才复制的钥匙给粘贴了，title随便写一个。
@@ -109,7 +131,7 @@ $ git remote add origin git@github.com/你的github用户名/仓库名.git
 Markdown 语法速查表
 
 
-1 标题与文字格式
+<!-- 1 标题与文字格式
 标题
 # 这是 H1 <一级标题>
 ## 这是 H2 <二级标题>
@@ -145,4 +167,4 @@ Markdown 语法速查表
 ```ruby
   def add(a, b)
     return a + b
-  end
+  end -->
