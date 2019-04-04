@@ -1,4 +1,3 @@
-============================
 # <LINUX基本命令>
 
 clear 清空
@@ -26,7 +25,6 @@ cp : 拷贝
 rm : 删除
     -r 递归删除    -f 强制删除(无法还原)
 
-============================
 # <git的常规流程>
 
 ####
@@ -67,16 +65,23 @@ $ git checkout xxx 从暂存区撤回到工作区，并且不会删除暂存区�
 
 $ git reset HEAD --xxx 拉取最近一次提交到版本库的文件到暂存区  改操作不影响工作区   为了checkout回工作区
 
-##<常用>
+###### <常用>
 $ git reset --hard 版本号    把暂存区和工作区的内容全部都变为该版本（版本号前几位就可以）
 
 $ git log xxx  该文件的历史操作
 
 
-============================
-团队协作模式
------------------------------------------------------------
-## <新电脑需要先配钥匙>
+# <团队协作模式>
+
+$ git push origin master  把本地历史区中的信息推送到中央服务器上 (存在代码冲突)
+
+$ git pull origin master  把中央服务器上的信息拉取到本地  (存在代码冲突)
+
+***
+***
+***
+***
+#### <新电脑需要先配钥匙>
 （钥匙的作用是把你电脑上面的git和github连接）
 ssh-keygen -t rsa -C "your_email@youremail.com"
 配钥匙的过程中不管你看到什么一路enter就好。然后你会在C:\Users\Administrator\.ssh目录下面看到三个东西，其中一个是.pub格式的，用记事本打开它，复制。然后来到你的github，在setting里面找到ssh keys把你刚才复制的钥匙给粘贴了，title随便写一个。
@@ -95,15 +100,12 @@ $ git remote add origin git@github.com/你的github用户名/仓库名.git
 #### <$ git remote add origin git@github.com:mbw3641193/Git-Study-Options.git 通过SSH链接本地仓库与github远程仓库>
 #### <$ git push -u origin master 上传到github远程仓库>
 
------------------------------------------------------------
+***
+***
+***
+***
 
-$ git push origin master  把本地历史区中的信息推送到中央服务器上 (存在代码冲突)
-
-$ git pull origin master  把中央服务器上的信息拉取到本地  (存在代码冲突)
-
-
-====================================================================
-### <github readme美化>
+# <github readme美化>
 Markdown 语法速查表
 
 
