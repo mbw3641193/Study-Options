@@ -50,5 +50,5 @@ $ git status 查看当前修改的文件处于哪一个区域
 
 $ git rm --cached xxx -f 删除暂存区的某个文件<xxx>
 
-$ git checkout xxx 从暂存区撤回到工作区
+$ git checkout xxx 从暂存区撤回到工作区，并且不会删除暂存区的文件
 
