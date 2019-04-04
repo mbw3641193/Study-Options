@@ -29,6 +29,11 @@ rm : 删除
 ============================
 git的常规流程
 
+####
+modify 工作区
+staged或cached 暂存区
+
+####
 每一个git仓库都有3个区
 1)工作区:
     写代码
@@ -41,7 +46,7 @@ $ git init 创建git仓库
 
 $ git add -A 全部提交到暂存区
 
-$ git commit -m'[备注]'  把暂存区中的内容提交到历史区，生成一个历史版本
+$ git commit xxx -m'[备注]'  把暂存区中的xxx文件提交到历史区，生成一个历史版本
 
 $ git status 查看当前修改的文件处于哪一个区域 
 红色：工作区
@@ -51,4 +56,19 @@ $ git status 查看当前修改的文件处于哪一个区域
 $ git rm --cached xxx -f 删除暂存区的某个文件<xxx>
 
 $ git checkout xxx 从暂存区撤回到工作区，并且不会删除暂存区的文件
+
+$git diff  工作区与暂存区对比
+$git diff master 工作区与历史区对比
+
+
+代码回滚：
+
+$ git checkout xxx 从暂存区撤回到工作区，并且不会删除暂存区的文件
+
+$ git reset HEAD --xxx 拉取最近一次提交到版本库的文件到暂存区  改操作不影响工作区   为了checkout回工作区
+
+$ git reset --hard 版本号    把暂存区和工作区的内容全部都变为该版本
+
+$ git log xxx  该文件的历史操作
+
 
