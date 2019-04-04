@@ -1,0 +1,81 @@
+    1  git push
+    2  git init
+    3  touch README
+    4  git add README
+    5  git commit -m 'first commit'
+    6  git remote add origin git@github.com:mbw3641193/test-demo.git
+    7  git push -u origin master
+    8  git init
+    9  git config --global user.name "mbw3641193"
+   10  git config --global user.email "305683054@qq.com"
+   11  ssh-keygen -t rsa -C "305683054@qq.com"
+   12  git config --global user.name "mbw3641193"
+   13  git config --global user.email "305683054@qq.com"
+   14  ssh-keygen -t rsa -C "305683054@qq.com"
+   15  demo.gitgit@github.com:mbw3641193/test-demo.git
+   16  git remote and origin "git@github.com:mbw3641193/test-demo.git"
+   17  git remote add origin "git@github.com:mbw3641193/test-demo.git"
+   18  git pull origin master
+   19  git push -u origin master
+   20  git push
+   21  git remote add origin git@github.com:mbw3641193/test-demo.git
+   22  git bash
+   23  ssh git@github.com
+   24  git add README
+   25  touch README
+   26  git add README
+   27  git commit -m 'first commit'
+   28  git push -u origin master
+   29  ls -a
+   30  cd git-test
+   31  li -l
+   32  ls -l
+   33  ls -a
+   34  clear
+   35  git init
+   36  git status
+   37  git add .
+   38  git status
+   39  git status
+   40  git rm --cached readme.md
+   41  git rm --cached readme.md -f
+   42  git status
+   43  git add .
+   44  git status
+   45  git status
+   46  git add .
+   47  git status
+   48  git checkout readme.md 
+   49  git add .
+   50  git diff
+   51  git status
+   52  git add .
+   53  git status
+   54  git status
+   55  git commit -m '第一版信息'
+   56  git status
+   57  git add .
+   58  git commit -m '第二版信息'
+   59  git status
+   60  git add .
+   61  git diff
+   62  git diff
+   63  git diff master
+   64  git add .
+   65  git diff master
+   66  git diff
+   67  git log
+   68  history readme.md
+   69  git history readme.md
+   70  log readme.md
+   71  git log readme.md
+   72  git status
+   73  git add
+   74  git add .
+   75  git commit -m '第三版信息'
+   76  get status
+   77  git log
+   78  history > 20190404.txt
+   79  git remote add origin git@github.com:mbw3641193/Git-Study-Options.git
+   80  git push -u origin master
+   81  history > 20190404.txt
