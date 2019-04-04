@@ -1,5 +1,5 @@
 # <LINUX基本命令>
-
+```ruby
 clear 清空
 
 ls -a/-l: 查看当前目录结构 (-a看所有包括隐藏)
@@ -66,16 +66,16 @@ $ git checkout xxx 从暂存区撤回到工作区，并且不会删除暂存区�
 $ git reset HEAD --xxx 拉取最近一次提交到版本库的文件到暂存区  改操作不影响工作区   为了checkout回工作区
 
 ###### <常用>
-$ git reset --hard 版本号    把暂存区和工作区的内容全部都变为该版本（版本号前几位就可以）
+`$ git reset --hard 版本号`    把暂存区和工作区的内容全部都变为该版本（版本号前几位就可以）
 
-$ git log xxx  该文件的历史操作
+`$ git log xxx`  该文件的历史操作
 
 
 # <团队协作模式>
 
-$ git push origin master  把本地历史区中的信息推送到中央服务器上 (存在代码冲突)
+`$ git push origin master`  把本地历史区中的信息推送到中央服务器上 (存在代码冲突)
 
-$ git pull origin master  把中央服务器上的信息拉取到本地  (存在代码冲突)
+`$ git pull origin master`  把中央服务器上的信息拉取到本地  (存在代码冲突)
 
 #### 1、基础流程操作
 1) 首先创建中央仓库：可以基于github来创建
@@ -87,10 +87,10 @@ $ git pull origin master  把中央服务器上的信息拉取到本地  (存在
 3) 远程仓库与本地仓库保持关联
 
     连接方式1：(http方式)
-    git remote add origin '远程仓库git地址'  > 远程仓库与本地仓库保持连接 origin是连接的名称
-    git remote -v                           > 查看连接信息
-    git remote rm origin                    > 断开连接
-    git remote update origin                > 更新连接通道
+ 1.   `$ git remote add origin '远程仓库git地址'`  > 远程仓库与本地仓库保持连接 origin是连接的名称
+ 2.   `$ git remote -v `                          > 查看连接信息
+ 3.   `$ git remote rm origin  `                  > 断开连接
+ 4.   `$ git remote update origin  `              > 更新连接通道
 
 
     连接方式2：把远程拉取到本地 (自动创建连接，最常用方式) 
