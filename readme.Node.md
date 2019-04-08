@@ -14,6 +14,20 @@ node 是基于v8引擎 渲染js的工具或者环境
 3. 异步无阻塞I/O操作 (IO : Input/Ouput  对文件的读写)
 4. event-driven事件驱动 (类似于回调函数)
 
+
+
+* js运行在客户端浏览器 ‘前端’
+* 浏览器给js提供了很多全局的属性和方法，例如window.xxx(setInterVal/setTimeout/eval/alert/JSON/...)
+
+* js运行在服务器node ‘后台’
+* node也给js提供很多内置属性和方法，例如: http/fs/url/path... 等对象中都提供很多API供js操作
+* 
+* 前端(浏览器运行js)是限制I/O操作的 (如果不限制可以随便读取用户磁盘信息) 
+* <input type='file'> 算是I/O操作，但是需要用户手动选择，而且只是读取并不是写入
+
+* NODE中运行JS 是不需要限制I/O操作的
+
+
 # NPM应用
 目前工程化开发都是基于node环境，基于npm安装管理安装模块，基于webpack实现模块之间的依赖打包、部署上线等。
 
@@ -114,8 +128,9 @@ require:            内置变量，用来导入模块。require会把导入的�
 
 3. 模块可以多次加载，但是只会在第一次加载时运行一次，运行的结果会被缓存。以后在加载会直接读取缓存结果
 
+`__dirname` 当前模块所在的绝对路径（也叫物理路径，具体到盘符）
 
-
+`__filename` 相对于__dirname多了个文件名称
 
 
 
