@@ -19,9 +19,34 @@ node 是基于v8引擎 渲染js的工具或者环境
 
 ```
 npm install xxx 把模块安装在当前目录下
+
 npm install xxx@xxx 安装指定版本号
+
 npm install -g xxx 把模块安装在全局目录下
+
 ```
+
+#### npm的一些其他源
+
+```
+1
+npm install cnpm -g       使用cnpm (不常用，安装经常有问题)
+
+2
+npm install yarn -g       使用yarn (只能把模块安装在当前目录下，不能安装到全局。基于yarn安装会默认生成package.json)
+
+yarn add xxx
+yarn remove xxx 
+
+3
+npm install bower -g      使用bower 也是类似于npm的包管理器，从github下载，不常用
+
+```
+
+# 初始化项目
+
+1. `npm init -y`              生成package.json  不添加-y 会默认手动输入选项
+2. `npm install xxx --save`   运行时需要用到的包使用–save，否则使用–save-dev。
 
 
 
