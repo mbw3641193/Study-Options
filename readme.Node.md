@@ -77,16 +77,22 @@ NODE本身是基于CommonJS模块规范设计的，所以模块是NODE的组成
 ```
 -- 导出
 module:             代表当前这个模块对象
-module.exports:     模块的这个 属性 用来导出模块的属性和方法 ,一个模块内只能有一个，如果有两个后面会覆盖前面的
+module.exports:     模块的这个 属性 用来导出模块的属性和方法 
 // dep.js
 module.exports = function () {}
+//或者
+//module.exports = {  
+//   fn1 : fn1,
+//}
+
 // app.js
 let dep = require('dep');
 dep();
 
 exports:            是内置变量，也是用来导出当前模块的属性和方法   exports.fn = fn;
 // dep.js
-exports.A = function() {}
+exports.A = function() {}   
+
 // app.js
 let dep = require('dep');
 dep.A();
@@ -94,13 +100,19 @@ dep.A();
 
 
 module.exports == exports ，并且值都是对象
+ exports就是module.exports的一个引用, 帮助简化代码, 如module.exports.A = 1可以简写为exports.A = 1
+ exports的正确使用方法, 只有exports.A = B 这种挂变量的形式.(B不能是字符串)
 
 
 
 -- 导入
-require:            内置变量，用来导入模块。require会把导入的模块代码全部执行完成，才可以获取值，然后继续执行本模块里面的代码，所以require是一个同步操作
+require:            内置变量，用来导入模块。require会把导入的模块代码全部执行完成，才可以获取值，然后继续执行本模块里面的代码，
+                    所以require是一个同步操作
+                    被导入的模块中如果有异步操作，则会单独执行。不会阻塞require
 
 ```
+
+3. 模块可以多次加载，但是只会在第一次加载时运行一次，运行的结果会被缓存。以后在加载会直接读取缓存结果
 
 
 
