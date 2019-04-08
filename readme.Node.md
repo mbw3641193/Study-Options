@@ -70,6 +70,40 @@ NODE本身是基于CommonJS模块规范设计的，所以模块是NODE的组成
 - 第三方模块：别人写好的，我们可以基于NPM安装使用
 - 自定义模块：自己创建的模块
 
+#### CommonJS模块化设计的思想
+1. 每一个JS都是一个单独的模块，模块里面的值和变量、函数都是私有的
+
+2. 允许模块之间互相调用
+```
+-- 导出
+module:             代表当前这个模块对象
+module.exports:     模块的这个 属性 用来导出模块的属性和方法 ,一个模块内只能有一个，如果有两个后面会覆盖前面的
+// dep.js
+module.exports = function () {}
+// app.js
+let dep = require('dep');
+dep();
+
+exports:            是内置变量，也是用来导出当前模块的属性和方法   exports.fn = fn;
+// dep.js
+exports.A = function() {}
+// app.js
+let dep = require('dep');
+dep.A();
+
+
+
+module.exports == exports ，并且值都是对象
+
+
+
+-- 导入
+require:            内置变量，用来导入模块。require会把导入的模块代码全部执行完成，才可以获取值，然后继续执行本模块里面的代码，所以require是一个同步操作
+
+```
+
+
+
 
 
 
