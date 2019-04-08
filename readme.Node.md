@@ -6,5 +6,4 @@ node 是基于v8引擎 渲染js的工具或者环境
     return a + b
   end
 
-123123
-
+是基于v8引擎
