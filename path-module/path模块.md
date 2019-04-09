@@ -18,3 +18,4 @@ path.resolve('wwwroot', 'static_files/png/', '../gif/image.gif');
 ```
 
 
+
